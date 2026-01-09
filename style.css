@@ -1,0 +1,35 @@
+/* ------------------------------
+   기본 설정
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #222;
+  background: #f7f9fc;
+  line-height: 1.6;
+}
+
+/* 링크 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------------------------------
+   헤더 & 네비게이션
+------------------------------ */
+header {
+  background: #ffffff;
+  padding: 20px 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-inde

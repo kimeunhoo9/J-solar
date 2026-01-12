@@ -58,7 +58,7 @@ header nav a:hover {
   position: relative;
   width: 100%;
   height: 300px;
-  background: #000 url('images/.png') center center / contain no-repeat;
+  background: #000 url('images/black.png') center center / contain no-repeat;
   /* contain = 이미지 전체 보이게 */
   display: flex;
   justify-content: center;

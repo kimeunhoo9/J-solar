@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>설치 & 시공 갤러리</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px 10%;
+      background: #f7f7f7;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* 카드 스타일 */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .item {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    }
+
+    .item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .desc {
+      padding: 15px 20px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    /* 팝업 스타일 */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.75);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .popup img {
+      max-width: 85%;
+      max-height: 85%;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>설치 & 시공 갤러리</h2>
+
+  <div class="gallery">
+
+    <div class="item">
+      <img src="images/영암하나로마트시공사진.jpg" onclick="openPopup('images/영암하나로마트시공사진.jpg')">
+      <p class="desc">영암 하나로 마트 태양광 시공</p>
+    </div>
+
+    <div class="item">
+      <img src="images/sample2.jpg" onclick="openPopup('images/sample2.jpg')">
+      <p class="desc">설치 프레임 구조 작업</p>
+    </div>
+
+    <div class="item">
+      <img src="images/sample3.jpg" onclick="openPopup('images/sample3.jpg')">
+      <p class="desc">패널 배치 완료 모습</p>
+    </div>
+
+    <div class="item">
+      <img src="images/sample4.jpg" onclick="openPopup('images/sample4.jpg')">
+      <p class="desc">인버터 세팅 작업</p>
+    </div>
+
+  </div>
+
+  <!-- 팝업 -->
+  <div class="popup" id="popup" onclick="closePopup()">
+    <img id="popupImg">
+  </div>
+
+  <script>
+    function openPopup(src) {
+      document.getElementById('popupImg').src = src;
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>인증현황 | J-SOLAR</title>
+  <meta name="description" content="J-SOLAR의 기업 인증서 및 기술 자격 현황을 소개합니다.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      margin: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+
+    /* ---- 인증서 이미지 레이아웃 ---- */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+
+    .cert-box {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .cert-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .cert-img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* ---- 설명 텍스트 박스 ---- */
+    .text-box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      line-height: 1.7;
+      font-size: 17px;
+      color: #444;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>인증현황</h1>
+
+    <!-- 📌 인증서 이미지 4개 -->
+    <div class="cert-grid">
+      <div class="cert-box">
+        <img src="images/인증.png" alt="인증서 1" class="cert-img">
+      </div>
+      <div class="cert-box">
+        <img src="images/인증2.png" alt="인증서 2" class="cert-img">
+      </div>
+      <div class="cert-box">
+        <img src="images/인증3.png" alt="인증서 3" class="cert-img">
+      </div>
+      <div class="cert-box">
+        <img src="images/인증4.png" alt="인증서 4" class="cert-img">
+      </div>
+    </div>
+
+    <!-- 📌 설명 글 입력 영역 -->
+    <div class="text-box">
+      <h2>J-SOLAR 인증 및 자격 소개</h2>
+      <p>
+        저희 J-SOLAR는 태양광 발전 사업의 모든 단계에서 신뢰할 수 있는 품질과 기술력을 바탕으로
+        고객에게 최고의 서비스를 제공하기 위해 노력하고 있습니다.
+      </p>
+      <p>
+        아래의 인증서는 회사가 보유한 공식 기술 인증, 품질 인증 및 전문 자격증으로
+        안정적인 태양광 발전 설비 구축을 위한 역량을 증명합니다.
+      </p>
+      <p>
+        앞으로도 지속적인 기술 개발과 품질 향상을 통해 최고의 태양광 에너지 솔루션을 제공하겠습니다.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -303,7 +303,7 @@ footer {
   color: #ff8a00; /* 강조 포인트 컬러 */
 }
 
-/* 🔽 드롭다운 기본 상태 (숨김) */
+/* 🔽 기본 숨김 */
 .submenu {
   position: absolute;
   top: 55px;
@@ -318,10 +318,17 @@ footer {
   border-radius: 6px;
   border: 1px solid #eee;
   box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
-  transition: all 0.25s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* 서브메뉴 항목 */
+/* ✔ JS가 붙여주는 클래스 */
+.submenu.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* 메뉴 항목 */
 .submenu li a {
   padding: 10px 15px;
   color: #444;
@@ -332,6 +339,7 @@ footer {
   background: #f7f7f7;
   color: #ff8a00;
 }
+
 
 /* 🔥 메뉴 Hover 시 드롭다운 오픈 */
 .menu-item:hover .submenu {
@@ -345,7 +353,7 @@ footer {
 .hero {
   width: 100%;
   padding: 150px 20px;
-  background: #a5a4a4; /* 완전한 검정 배경 */
+  background: #a1a1a1; /* 완전한 검정 배경 */
   text-align: center;
 }
 

@@ -1,6 +1,6 @@
-/* ------------------------------
-   기본 설정
------------------------------- */
+/* ============================================
+   RESET 기본 스타일 초기화
+============================================ */
 * {
   margin: 0;
   padding: 0;
@@ -9,118 +9,120 @@
 
 body {
   font-family: "Noto Sans KR", sans-serif;
-  color: #222;
   background: #f7f9fc;
+  color: #1f2937;
   line-height: 1.6;
 }
 
-/* 링크 */
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
-/* ------------------------------
-   헤더 & 네비게이션
------------------------------- */
-header {
+/* ============================================
+   공통 레이아웃
+============================================ */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ============================================
+   상단 네비게이션 바
+============================================ */
+.top-nav {
+  width: 100%;
   background: #ffffff;
   padding: 20px 40px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-header h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #007bff;
-}
-
-header nav a {
-  margin-left: 25px;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-header nav a:hover {
-  color: #0056b3;
-}
-
-/* ------------------------------
-   Hero 섹션
------------------------------- */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  background: #000 url('images/black.png') center center / contain no-repeat;
-  /* contain = 이미지 전체 보이게 */
+/* 로고 */
+.logo-area {
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 0 20px;
-  color: white;
+  gap: 12px;
 }
-
-
-
-/* 배경 위 어두운 오버레이 */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.45); /* 어둡게 */
-  z-index: 1;
+.logo {
+  height: 45px;
 }
-
-/* 내용(텍스트) */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-}
-
-.hero-content h2 {
-  font-size: 2.8rem;
+.logo-text {
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 15px;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-  opacity: 0.9;
+/* 메뉴 */
+.menu a {
+  margin-left: 30px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding-bottom: 5px;
+  transition: 0.25s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.menu a:hover {
+  color: #007bff;
+  border-bottom: 3px solid #007bff;
+}
+
+/* ============================================
+   공통 버튼 스타일
+============================================ */
+button,
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #007bff, #00aaff);
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 
+.back-btn:hover {
+  background: #f1f1f1;
+}
+
+/* ============================================
+   메인 페이지 카드 디자인
+============================================ */
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .card {
   flex: 1 1 250px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   padding: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: 0.30s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
@@ -134,98 +136,228 @@ header nav a:hover {
   color: #007bff;
 }
 
-/* ------------------------------
-   버튼
------------------------------- */
-button {
-  background: linear-gradient(90deg, #007bff, #00aaff);
-  color: #fff;
-  font-weight: bold;
-  padding: 14px 0;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, backgreound 0.3s;
-  width: 100%;
-}
-
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  background: linear-gradient(90deg, #0056b3, #0077cc);
-}
-
-/* ------------------------------
-   문의 섹션
------------------------------- */
-#contactForm input,
-#contactForm textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-#contactForm textarea {
-  height: 120px;
-}
-
-.success {
+/* ============================================
+   유지보수 페이지 스타일
+============================================ */
+.maintenance-header {
   text-align: center;
-  margin-top: 20px;
-  color: green;
-  font-weight: bold;
+  padding: 70px 20px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-/* ------------------------------
-   푸터
------------------------------- */
-footer {
-  background: #fff;
-  padding: 20px 40px;
-  text-align: center;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-  font-size: 0.9rem;
-  color: #666;
+.maintenance-section {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid #e5e7eb;
 }
 
-/* ------------------------------
-   반응형
------------------------------- */
-@media (max-width: 768px) {
-  .cards {
-    flex-direction: column;
+.maintenance-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+/* ============================================
+   시공 갤러리 페이지
+============================================ */
+.gallery {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+@media (max-width: 1000px) {
+  .gallery {
+    column-count: 2;
   }
+}
+@media (max-width: 600px) {
+  .gallery {
+    column-count: 1;
+  }
+}
 
-  header {
+.item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.item img {
+  width: 100%;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.desc {
+  padding: 15px 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* 팝업 */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.popup img {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 12px;
+}
+
+/* 페이지네이션 */
+.pagination {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  margin: 0 5px;
+  border-radius: 8px;
+  background: #007bff;
+  border: none;
+  color: white;
+}
+
+.pagination .active {
+  background: #0056b3;
+}
+
+/* ============================================
+   푸터
+============================================ */
+footer {
+  background: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* ============================================
+   반응형
+============================================ */
+@media (max-width: 768px) {
+  .top-nav {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  header nav {
+  .menu {
     margin-top: 15px;
   }
+
+  .menu a {
+    margin-left: 0;
+    margin-right: 20px;
+  }
 }
-/* ------------------------------
-   뒤로가기 버튼 (공통 스타일)
------------------------------- */
-.back-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  padding: 10px 18px;
+/* 네비게이션 바 전체 */
+.navbar {
   background: #ffffff;
-  border: 1px solid #cccccc;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 500;
-  z-index: 9999;
-  transition: 0.2s ease;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
 }
 
-.back-btn:hover {
-  background: #f1f1f1;
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 8px 14px;
+  display: block;
+}
+
+.menu a:hover {
+  color: #ff8a00; /* 강조 포인트 컬러 */
+}
+
+/* 🔽 드롭다운 기본 상태 (숨김) */
+.submenu {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 10px 0;
+  width: 160px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  border-radius: 6px;
+  border: 1px solid #eee;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+
+/* 서브메뉴 항목 */
+.submenu li a {
+  padding: 10px 15px;
+  color: #444;
+  font-size: 15px;
+}
+
+.submenu li a:hover {
+  background: #f7f7f7;
+  color: #ff8a00;
+}
+
+/* 🔥 메뉴 Hover 시 드롭다운 오픈 */
+.menu-item:hover .submenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+/* ==========================
+   메인 배너 (Hero Section)
+========================== */
+.hero {
+  width: 100%;
+  padding: 150px 20px;
+  background: #a5a4a4; /* 완전한 검정 배경 */
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #ffffff; /* 연한 회색 */
+  font-size: 18px;
+  margin: 6px 0;
 }

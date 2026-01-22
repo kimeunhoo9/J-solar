@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>문의하기 게시판</title>
+
+<style>
+body {
+  font-family: Pretendard, Arial, sans-serif;
+  background: #f5f6f7;
+  padding: 40px;
+}
+
+.board-wrap {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* 제목 */
+h2 {
+  margin-bottom: 20px;
+}
+
+/* 테이블 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+td.title {
+  text-align: left;
+  cursor: pointer;
+}
+
+/* 버튼 */
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2fa36b;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #258a5a;
+}
+
+/* 글쓰기 폼 */
+.write-form, .view-box {
+  margin-top: 30px;
+  display: none;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.reply {
+  background: #f6faf7;
+  padding: 15px;
+  margin-top: 20px;
+  border-left: 4px solid #2fa36b;
+}
+</style>
+</head>
+
+<body>
+
+<div class="board-wrap">
+  <h2>문의하기</h2>
+
+  <button onclick="openWrite()">문의 작성</button>
+
+  <!-- 목록 -->
+  <table id="board">
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>날짜</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- 글쓰기 -->
+  <div class="write-form">
+    <h3>문의 작성</h3>
+    <input id="title" placeholder="제목">
+    <textarea id="content" rows="5" placeholder="문의 내용"></textarea>
+    <button onclick="savePost()">등록</button>
+  </div>
+
+  <!-- 글 보기 -->
+  <div class="view-box">
+    <h3 id="view-title"></h3>
+    <p id="view-content"></p>
+
+    <div class="reply" id="reply-box"></div>
+
+    <textarea id="reply-input" placeholder="관리자 답변"></textarea>
+    <button onclick="saveReply()">답변 등록</button>
+  </div>
+</div>
+
+<script>
+let posts = JSON.parse(localStorage.getItem("posts")) || [];
+let selectedIndex = null;
+
+function render() {
+  const tbody = document.querySelector("#board tbody");
+  tbody.innerHTML = "";
+  posts.forEach((post, i) => {
+    tbody.innerHTML += `
+      <tr>
+        <td>${i + 1}</td>
+        <td class="title" onclick="viewPost(${i})">${post.title}</td>
+        <td>${post.date}</td>
+      </tr>
+    `;
+  });
+}
+
+function openWrite() {
+  document.querySelector(".write-form").style.display = "block";
+  document.querySelector(".view-box").style.display = "none";
+}
+
+function savePost() {
+  const title = document.getElementById("title").value;
+  const content = document.getElementById("content").value;
+  if (!title || !content) return alert("내용을 입력하세요");
+
+  posts.unshift({
+    title,
+    content,
+    reply: "",
+    date: new Date().toLocaleDateString()
+  });
+
+  localStorage.setItem("posts", JSON.stringify(posts));
+  location.reload();
+}
+
+function viewPost(i) {
+  selectedIndex = i;
+  const post = posts[i];
+  document.querySelector(".view-box").style.display = "block";
+  document.querySelector(".write-form").style.display = "none";
+
+  document.getElementById("view-title").innerText = post.title;
+  document.getElementById("view-content").innerText = post.content;
+  document.getElementById("reply-box").innerText =
+    post.reply ? "RE: " + post.reply : "아직 답변이 없습니다.";
+}
+
+function saveReply() {
+  const reply = document.getElementById("reply-input").value;
+  posts[selectedIndex].reply = reply;
+  localStorage.setItem("posts", JSON.stringify(posts));
+  location.reload();
+}
+
+render();
+</script>
+
+</body>
+</html>

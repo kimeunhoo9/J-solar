@@ -253,23 +253,120 @@ footer {
 }
 
 /* ============================================
-   반응형
+   📱 모바일 전용 보완 (기존 CSS 유지)
 ============================================ */
 @media (max-width: 768px) {
-  .top-nav {
-    flex-direction: column;
-    align-items: flex-start;
+
+  /* 전체 여백 정리 */
+  body {
+    font-size: 15px;
   }
 
+  .container {
+    padding: 15px;
+  }
+
+  /* ===== 상단 네비게이션 ===== */
+  .top-nav {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    height: 38px;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+  }
+
+  /* 메뉴를 세로 정렬 */
   .menu {
-    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px;
+    padding-top: 10px;
   }
 
   .menu a {
-    margin-left: 0;
-    margin-right: 20px;
+    font-size: 0.95rem;
+    padding: 6px 0;
+    border-bottom: none;
+  }
+
+  /* 드롭다운 메뉴 모바일에서 자연스럽게 */
+  .submenu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: none;
+    border: none;
+    padding-left: 10px;
+  }
+
+  .submenu li a {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  /* ===== 메인 배너 ===== */
+  .hero {
+    padding: 90px 20px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  /* ===== 카드 레이아웃 ===== */
+  .cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  /* ===== 유지보수 페이지 ===== */
+  .maintenance-section {
+    padding: 25px 20px;
+  }
+
+  /* ===== 갤러리 ===== */
+  .gallery {
+    column-count: 1;
+  }
+
+  .desc {
+    font-size: 13px;
+  }
+
+  /* ===== 버튼 ===== */
+  button,
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  /* ===== 푸터 ===== */
+  footer {
+    font-size: 0.8rem;
+    padding: 15px;
   }
 }
+
 /* 네비게이션 바 전체 */
 .navbar {
   background: #ffffff;

@@ -253,80 +253,84 @@ footer {
 }
 
 /* ============================================
-   📱 모바일 전용 보완 (기존 CSS 유지)
+   📱 Mobile Clean Layout (기존 유지)
 ============================================ */
 @media (max-width: 768px) {
 
-  /* 전체 여백 정리 */
+  /* 전체 기본 정리 */
   body {
-    font-size: 15px;
+    font-size: 14.5px;
   }
 
   .container {
-    padding: 15px;
+    padding: 16px;
   }
 
-  /* ===== 상단 네비게이션 ===== */
+  /* =====================
+     상단 네비
+  ===================== */
   .top-nav {
-    padding: 15px 20px;
+    padding: 14px 16px;
+    align-items: flex-start;
   }
 
   .logo {
-    height: 38px;
+    height: 36px;
   }
 
   .logo-text {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
-  /* 메뉴를 세로 정렬 */
+  /* 메뉴: 줄바꿈만 허용 (디자인 유지) */
   .menu {
+    gap: 18px;
+    margin-top: 12px;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 15px;
-    padding-top: 10px;
   }
 
   .menu a {
     font-size: 0.95rem;
-    padding: 6px 0;
-    border-bottom: none;
+    padding: 4px 0;
   }
 
-  /* 드롭다운 메뉴 모바일에서 자연스럽게 */
+  /* 드롭다운: 모바일에서는 그냥 아래로 자연스럽게 */
   .submenu {
     position: static;
-    transform: none;
     opacity: 1;
     pointer-events: auto;
+    transform: none;
     box-shadow: none;
     border: none;
-    padding-left: 10px;
+    padding: 6px 0 0 10px;
   }
 
   .submenu li a {
-    font-size: 14px;
-    padding: 8px 0;
+    font-size: 0.9rem;
+    padding: 6px 0;
   }
 
-  /* ===== 메인 배너 ===== */
+  /* =====================
+     메인 배너
+  ===================== */
   .hero {
-    padding: 90px 20px;
+    padding: 90px 18px;
   }
 
   .hero h1 {
-    font-size: 28px;
-    line-height: 1.3;
+    font-size: 26px;
+    line-height: 1.35;
   }
 
   .hero p {
-    font-size: 15px;
+    font-size: 14.5px;
   }
 
-  /* ===== 카드 레이아웃 ===== */
+  /* =====================
+     카드
+  ===================== */
   .cards {
-    flex-direction: column;
-    gap: 20px;
+    gap: 18px;
   }
 
   .card {
@@ -334,38 +338,54 @@ footer {
   }
 
   .card h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
-  /* ===== 유지보수 페이지 ===== */
+  /* =====================
+     유지보수 / 콘텐츠 박스
+  ===================== */
   .maintenance-section {
-    padding: 25px 20px;
+    padding: 24px 18px;
   }
 
-  /* ===== 갤러리 ===== */
+  /* =====================
+     갤러리
+  ===================== */
   .gallery {
     column-count: 1;
+    column-gap: 0;
+  }
+
+  .item {
+    margin-bottom: 16px;
   }
 
   .desc {
     font-size: 13px;
+    line-height: 1.5;
   }
 
-  /* ===== 버튼 ===== */
+  /* =====================
+     버튼
+  ===================== */
   button,
   .btn {
     width: 100%;
-    text-align: center;
-    padding: 14px;
-    font-size: 15px;
+    padding: 13px;
+    font-size: 14.5px;
+    border-radius: 10px;
   }
 
-  /* ===== 푸터 ===== */
+  /* =====================
+     푸터
+  ===================== */
   footer {
+    margin-top: 40px;
+    padding: 16px;
     font-size: 0.8rem;
-    padding: 15px;
   }
 }
+
 
 /* 네비게이션 바 전체 */
 .navbar {

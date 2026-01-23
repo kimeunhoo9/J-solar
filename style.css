@@ -242,8 +242,9 @@ button:hover,
   }
 
   .menu {
-    flex-wrap: nowrap;
-    gap: 50px;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
   }
 
   .submenu {

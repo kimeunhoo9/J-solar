@@ -95,11 +95,6 @@ button:hover,
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-
-.back-btn:hover {
-  background: #f1f1f1;
-}
-
 /* ============================================
    메인 페이지 카드 디자인
 ============================================ */
@@ -155,29 +150,12 @@ button:hover,
   border: 1px solid #e5e7eb;
 }
 
-.maintenance-img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 30px;
-}
-
 /* ============================================
    시공 갤러리 페이지
 ============================================ */
 .gallery {
   column-count: 3;
   column-gap: 20px;
-}
-
-@media (max-width: 1000px) {
-  .gallery {
-    column-count: 2;
-  }
-}
-@media (max-width: 600px) {
-  .gallery {
-    column-count: 1;
-  }
 }
 
 .item {
@@ -193,253 +171,30 @@ button:hover,
 .item img {
   width: 100%;
   cursor: pointer;
-  border-bottom: 1px solid #eee;
-}
-
-.desc {
-  padding: 15px 20px;
-  font-size: 14px;
-  color: #444;
-}
-
-/* 팝업 */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-.popup img {
-  max-width: 85%;
-  max-height: 85%;
-  border-radius: 12px;
-}
-
-/* 페이지네이션 */
-.pagination {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.pagination button {
-  padding: 8px 14px;
-  margin: 0 5px;
-  border-radius: 8px;
-  background: #007bff;
-  border: none;
-  color: white;
-}
-
-.pagination .active {
-  background: #0056b3;
 }
 
 /* ============================================
-   푸터
+   네비게이션 메뉴 / 드롭다운
 ============================================ */
-footer {
-  background: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
-  font-size: 0.9rem;
-  color: #6b7280;
-}
-
-/* ============================================
-   📱 Mobile Clean Layout (기존 유지)
-============================================ */
-@media (max-width: 768px) {
-
-  /* 전체 기본 정리 */
-  body {
-    font-size: 14.5px;
-  }
-
-  .container {
-    padding: 16px;
-  }
-
-  /* =====================
-     상단 네비
-  ===================== */
-  .top-nav {
-    padding: 14px 16px;
-    align-items: flex-start;
-  }
-
-  .logo {
-    height: 36px;
-  }
-
-  .logo-text {
-    font-size: 1.25rem;
-  }
-
-  /* 메뉴: 줄바꿈만 허용 (디자인 유지) */
-  .menu {
-    gap: 18px;
-    margin-top: 12px;
-    flex-wrap: wrap;
-  }
-
-  .menu a {
-    font-size: 0.95rem;
-    padding: 4px 0;
-  }
-
-/* ============================================
-   📱 Mobile Dropdown → 가로 정렬
-============================================ */
-@media (max-width: 768px) {
-
-  /* 서브메뉴 가로로 */
-  .submenu {
-    display: flex;
-    flex-direction: row;   /* 가로 */
-    gap: 12px;
-    padding: 10px 0 0 0;
-  }
-
-  .submenu li {
-    list-style: none;
-  }
-
-  .submenu li a {
-    padding: 6px 10px;
-    background: #f5f5f5;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    white-space: nowrap; /* 줄바꿈 방지 */
-  }
-}
-
-
-  /* =====================
-     메인 배너
-  ===================== */
-  .hero {
-    padding: 90px 18px;
-  }
-
-  .hero h1 {
-    font-size: 26px;
-    line-height: 1.35;
-  }
-
-  .hero p {
-    font-size: 14.5px;
-  }
-
-  /* =====================
-     카드
-  ===================== */
-  .cards {
-    gap: 18px;
-  }
-
-  .card {
-    padding: 18px;
-  }
-
-  .card h3 {
-    font-size: 1.05rem;
-  }
-
-  /* =====================
-     유지보수 / 콘텐츠 박스
-  ===================== */
-  .maintenance-section {
-    padding: 24px 18px;
-  }
-
-  /* =====================
-     갤러리
-  ===================== */
-  .gallery {
-    column-count: 1;
-    column-gap: 0;
-  }
-
-  .item {
-    margin-bottom: 16px;
-  }
-
-  .desc {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  /* =====================
-     버튼
-  ===================== */
-  button,
-  .btn {
-    width: 100%;
-    padding: 13px;
-    font-size: 14.5px;
-    border-radius: 10px;
-  }
-
-  /* =====================
-     푸터
-  ===================== */
-  footer {
-    margin-top: 40px;
-    padding: 16px;
-    font-size: 0.8rem;
-  }
-}
-
-
-/* 네비게이션 바 전체 */
-.navbar {
-  background: #ffffff;
-  border-bottom: 1px solid #ddd;
-  width: 100%;
-}
-
 .menu {
   display: flex;
   justify-content: center;
   gap: 50px;
   list-style: none;
-  margin: 0;
-  padding: 20px 0;
 }
 
 .menu-item {
   position: relative;
 }
 
-.menu a {
-  text-decoration: none;
-  color: #333;
-  font-size: 17px;
-  font-weight: 600;
-  padding: 8px 14px;
-  display: block;
-}
-
-.menu a:hover {
-  color: #ff8a00; /* 강조 포인트 컬러 */
-}
-
-/* 🔽 기본 숨김 */
 .submenu {
   position: absolute;
   top: 55px;
   left: 0;
+  width: 160px;
   background: white;
   list-style: none;
   padding: 10px 0;
-  width: 160px;
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
@@ -449,39 +204,19 @@ footer {
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* ✔ JS가 붙여주는 클래스 */
-.submenu.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-/* 메뉴 항목 */
-.submenu li a {
-  padding: 10px 15px;
-  color: #444;
-  font-size: 15px;
-}
-
-.submenu li a:hover {
-  background: #f7f7f7;
-  color: #ff8a00;
-}
-
-
-/* 🔥 메뉴 Hover 시 드롭다운 오픈 */
 .menu-item:hover .submenu {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
-/* ==========================
-   메인 배너 (Hero Section)
-========================== */
+
+/* ============================================
+   히어로 섹션
+============================================ */
 .hero {
   width: 100%;
   padding: 150px 20px;
-  background: #a1a1a1; /* 완전한 검정 배경 */
+  background: #a1a1a1;
   text-align: center;
 }
 
@@ -489,11 +224,63 @@ footer {
   font-size: 48px;
   font-weight: 800;
   color: #ffffff;
-  margin-bottom: 20px;
 }
 
 .hero p {
-  color: #ffffff; /* 연한 회색 */
+  color: #ffffff;
   font-size: 18px;
-  margin: 6px 0;
+}
+
+/* ============================================
+   🔒 모바일·태블릿에서도 PC처럼 보이게 강제
+============================================ */
+@media (max-width: 1024px) {
+
+  .top-nav {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .menu {
+    flex-wrap: nowrap;
+    gap: 50px;
+  }
+
+  .submenu {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+  }
+
+  .menu-item:hover .submenu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .cards {
+    flex-direction: row;
+  }
+
+  .gallery {
+    column-count: 3;
+  }
+
+  button,
+  .btn {
+    width: auto;
+  }
+
+  .hero {
+    padding: 150px 20px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
 }

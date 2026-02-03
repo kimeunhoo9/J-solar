@@ -1,5 +1,5 @@
 /* ============================================
-   RESET 기본 스타일 초기화
+   RESET
 ============================================ */
 * {
   margin: 0;
@@ -29,7 +29,7 @@ a {
 }
 
 /* ============================================
-   상단 네비게이션 바
+   네비게이션
 ============================================ */
 .top-nav {
   width: 100%;
@@ -44,41 +44,91 @@ a {
   z-index: 1000;
 }
 
-/* 로고 */
 .logo-area {
   display: flex;
   align-items: center;
   gap: 12px;
+  white-space: nowrap;
 }
+
 .logo {
   height: 45px;
 }
+
 .logo-text {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
 /* 메뉴 */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.menu-item {
+  position: relative;
+}
+
 .menu a {
-  margin-left: 30px;
-  font-size: 1.05rem;
+  font-size: 17px;
   font-weight: 600;
-  padding-bottom: 5px;
-  transition: 0.25s ease;
-  border-bottom: 3px solid transparent;
+  padding: 8px 14px;
+  display: block;
+  color: #333;
 }
 
 .menu a:hover {
-  color: #007bff;
-  border-bottom: 3px solid #007bff;
+  color: #ff8a00;
 }
 
 /* ============================================
-   공통 버튼 스타일
+   서브메뉴
+============================================ */
+.submenu {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 10px 0;
+  width: 160px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  border-radius: 6px;
+  border: 1px solid #eee;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.submenu.show,
+.menu-item:hover .submenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  font-size: 15px;
+  color: #444;
+}
+
+.submenu li a:hover {
+  background: #f7f7f7;
+  color: #ff8a00;
+}
+
+/* ============================================
+   버튼
 ============================================ */
 button,
 .btn {
-  display: inline-block;
   background: linear-gradient(90deg, #007bff, #00aaff);
   color: white;
   font-weight: bold;
@@ -86,22 +136,17 @@ button,
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: 0.25s ease;
+  transition: 0.25s;
 }
 
 button:hover,
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-
-
-.back-btn:hover {
-  background: #f1f1f1;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
 
 /* ============================================
-   메인 페이지 카드 디자인
+   카드
 ============================================ */
 .cards {
   display: flex;
@@ -115,14 +160,14 @@ button:hover,
   flex: 1 1 250px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   padding: 20px;
-  transition: 0.30s;
+  transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 .card img {
@@ -137,7 +182,58 @@ button:hover,
 }
 
 /* ============================================
-   유지보수 페이지 스타일
+   갤러리
+============================================ */
+.gallery {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.item img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.desc {
+  padding: 15px 20px;
+  font-size: 14px;
+}
+
+/* ============================================
+   Hero 배너
+============================================ */
+.hero {
+  width: 100%;
+  min-height: 55vh;
+  padding: 100px 20px;
+  background: #a1a1a1;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* ============================================
+   유지보수
 ============================================ */
 .maintenance-header {
   text-align: center;
@@ -162,85 +258,6 @@ button:hover,
 }
 
 /* ============================================
-   시공 갤러리 페이지
-============================================ */
-.gallery {
-  column-count: 3;
-  column-gap: 20px;
-}
-
-@media (max-width: 1000px) {
-  .gallery {
-    column-count: 2;
-  }
-}
-@media (max-width: 600px) {
-  .gallery {
-    column-count: 1;
-  }
-}
-
-.item {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 20px;
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.item img {
-  width: 100%;
-  cursor: pointer;
-  border-bottom: 1px solid #eee;
-}
-
-.desc {
-  padding: 15px 20px;
-  font-size: 14px;
-  color: #444;
-}
-
-/* 팝업 */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-.popup img {
-  max-width: 85%;
-  max-height: 85%;
-  border-radius: 12px;
-}
-
-/* 페이지네이션 */
-.pagination {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.pagination button {
-  padding: 8px 14px;
-  margin: 0 5px;
-  border-radius: 8px;
-  background: #007bff;
-  border: none;
-  color: white;
-}
-
-.pagination .active {
-  background: #0056b3;
-}
-
-/* ============================================
    푸터
 ============================================ */
 footer {
@@ -250,255 +267,4 @@ footer {
   margin-top: 60px;
   font-size: 0.9rem;
   color: #6b7280;
-}
-
-/* ============================================
-   📱 모바일 전용 보완 (기존 CSS 유지)
-============================================ */
-@media (max-width: 768px) {
-
-  /* 전체 여백 정리 */
-  body {
-    font-size: 15px;
-  }
-
-  .container {
-    padding: 15px;
-  }
-
-  /* ===== 상단 네비게이션 ===== */
-  .top-nav {
-    padding: 15px 20px;
-  }
-
-  .logo {
-    height: 38px;
-  }
-
-  .logo-text {
-    font-size: 1.3rem;
-  }
-
-  /* 메뉴를 세로 정렬 */
-  .menu {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 15px;
-    padding-top: 10px;
-  }
-
-  .menu a {
-    font-size: 0.95rem;
-    padding: 6px 0;
-    border-bottom: none;
-  }
-
-  /* 드롭다운 메뉴 모바일에서 자연스럽게 */
-  .submenu {
-    position: static;
-    transform: none;
-    opacity: 1;
-    pointer-events: auto;
-    box-shadow: none;
-    border: none;
-    padding-left: 10px;
-  }
-
-  .submenu li a {
-    font-size: 14px;
-    padding: 8px 0;
-  }
-
-  /* ===== 메인 배너 ===== */
-  .hero {
-    padding: 90px 20px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-    line-height: 1.3;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  /* ===== 카드 레이아웃 ===== */
-  .cards {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .card {
-    padding: 18px;
-  }
-
-  .card h3 {
-    font-size: 1.1rem;
-  }
-
-  /* ===== 유지보수 페이지 ===== */
-  .maintenance-section {
-    padding: 25px 20px;
-  }
-
-  /* ===== 갤러리 ===== */
-  .gallery {
-    column-count: 1;
-  }
-
-  .desc {
-    font-size: 13px;
-  }
-
-  /* ===== 버튼 ===== */
-  button,
-  .btn {
-    width: 100%;
-    text-align: center;
-    padding: 14px;
-    font-size: 15px;
-  }
-
-  /* ===== 푸터 ===== */
-  footer {
-    font-size: 0.8rem;
-    padding: 15px;
-  }
-}
-
-/* 네비게이션 바 전체 */
-.navbar {
-  background: #ffffff;
-  border-bottom: 1px solid #ddd;
-  width: 100%;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  list-style: none;
-  margin: 0;
-  padding: 20px 0;
-}
-
-.menu-item {
-  position: relative;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #333;
-  font-size: 17px;
-  font-weight: 600;
-  padding: 8px 14px;
-  display: block;
-}
-
-.menu a:hover {
-  color: #ff8a00; /* 강조 포인트 컬러 */
-}
-
-/* 🔽 기본 숨김 */
-.submenu {
-  position: absolute;
-  top: 55px;
-  left: 0;
-  background: white;
-  list-style: none;
-  padding: 10px 0;
-  width: 160px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  border-radius: 6px;
-  border: 1px solid #eee;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-/* ✔ JS가 붙여주는 클래스 */
-.submenu.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-/* 메뉴 항목 */
-.submenu li a {
-  padding: 10px 15px;
-  color: #444;
-  font-size: 15px;
-}
-
-.submenu li a:hover {
-  background: #f7f7f7;
-  color: #ff8a00;
-}
-
-
-/* 🔥 메뉴 Hover 시 드롭다운 오픈 */
-.menu-item:hover .submenu {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-/* ==========================
-   메인 배너 (Hero Section)
-========================== */
-.hero {
-  width: 100%;
-  padding: 150px 20px;
-  background: #a1a1a1; /* 완전한 검정 배경 */
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 48px;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  color: #ffffff; /* 연한 회색 */
-  font-size: 18px;
-  margin: 6px 0;
-}
-/* ================================
-   메인 로고 한줄 고정
-================================ */
-
-.logo-area {
-  white-space: nowrap;   /* 줄바꿈 금지 */
-}
-
-.logo-text {
-  white-space: nowrap;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-
-/* ================================
-   메인 배너 높이 줄이기
-================================ */
-
-.hero {
-  min-height: 55vh !important;   /* 기존 80vh → 55vh */
-  padding: 100px 20px !important;
-}
-
-
-/* ================================
-   메인 글씨 크기 조정
-================================ */
-
-.hero h1 {
-  font-size: 40px;
-}
-
-.hero p {
-  font-size: 16px;
 }

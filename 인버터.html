@@ -41,12 +41,78 @@
       font-weight: 600;
       text-decoration: none;
     }
+      /* ---- 인증서 이미지 레이아웃 ---- */
+     .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(181px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+
+    .cert-box {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .cert-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .cert-img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+     /* ---- 설명 텍스트 박스 ---- */
+    .text-box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      line-height: 1.7;
+      font-size: 17px;
+      color: #444;
+    }
+        .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 22px;
+      background: #007bff;
+      color: #ffffff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+
+    .back-btn:hover {
+      background: #0056b3;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>인버터</h1>
+    <h1>인버터 인증서</h1>
+
+<div class="cert-grid">
+      <div class="cert-box">
+        <img src="images/인증5.png" alt="인증서 1" class="cert-img">
+      </div>
+      <div class="cert-box">
+        <img src="images/인증6.png" alt="인증서 2" class="cert-img">
+      </div>
+      <div class="cert-box">
+        <img src="images/인증7.png" alt="인증서 3" class="cert-img">
+      </div>
+      <div class="cert-box">
+        <img src="images/인증 8.png" alt="인증서 4" class="cert-img">
+      </div>
+    </div>
 
     <p>
       인버터는 태양광 모듈에서 생산된 직류 전기를

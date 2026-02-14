@@ -1,73 +1,230 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>태양광 모듈 | JSOLAR</title>
-   <link rel="stylesheet" href="style.css"><link rel="icon" type="image/png" href="images/제이솔라로고.png">
-  <meta name="viewport" content="width=1200">
+<meta charset="UTF-8">
+<title>태양광 모듈 | JSOLAR</title>
 
-  <style>
-    body {
-      font-family: "Noto Sans KR", sans-serif;
-      background: #f4f6f8;
-      color: #2c2c2c;
-      margin: 0;
-      line-height: 1.8;
-    }
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/제이솔라로고.png">
+<meta name="viewport" content="width=1200">
 
-    .container {
-      max-width: 900px;
-      margin: 80px auto;
-      padding: 55px 50px;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-    }
+<style>
 
-    h1 { font-size: 30px; margin-bottom: 30px; }
-    h2 { font-size: 20px; margin-top: 40px; }
-    p { font-size: 15.5px; color: #444; }
+body{
+  font-family:"Noto Sans KR",sans-serif;
+  background:#f4f6f8;
+  margin:0;
+  color:#2c2c2c;
+  line-height:1.8;
+}
 
-    ul { padding-left: 18px; }
-    li { margin-bottom: 10px; }
+/* 전체 박스 */
+.container{
+  max-width:1000px;
+  margin:80px auto;
+  padding:60px;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 10px 35px rgba(0,0,0,0.06);
+}
 
-    .back-btn {
-      display: inline-block;
-      margin-top: 45px;
-      padding: 14px 26px;
-      background: linear-gradient(90deg,#007bff,#00aaff);
-      color: #fff;
-      border-radius: 10px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-  </style>
+h1{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+.desc{
+  color:#555;
+  margin-bottom:50px;
+}
+
+/* ===== 2컬럼 레이아웃 ===== */
+
+.module-grid{
+  display:grid;
+  grid-template-columns: 380px 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+/* 인증서 카드 */
+.cert-box{
+  background:#fff;
+  padding:20px;
+  border-radius:14px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  text-align:center;
+  transition:0.3s;
+}
+
+.cert-box:hover{
+  transform:translateY(-6px);
+}
+
+.cert-img{
+  width:100%;
+  border-radius:10px;
+}
+
+.cert-title{
+  margin-top:15px;
+  font-weight:600;
+  color:#333;
+}
+
+/* 특징 영역 */
+
+.feature h2{
+  margin-top:0;
+  font-size:22px;
+}
+
+.feature ul{
+  list-style:none;
+  padding:0;
+  margin-top:20px;
+}
+
+.feature li{
+  display:flex;
+  gap:12px;
+  margin-bottom:18px;
+  font-size:16px;
+}
+
+/* 체크 아이콘 */
+.feature li::before{
+  content:"✔";
+  background:#1e73ff;
+  color:#fff;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  flex-shrink:0;
+  margin-top:3px;
+}
+
+/* 적용 분야 */
+.section{
+  margin-top:60px;
+}
+
+.section h2{
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+/* 버튼 */
+.btn-wrap{
+  margin-top:35px;
+}
+
+.back-btn{
+  display:inline-block;
+  padding:14px 30px;
+  background:linear-gradient(90deg,#007bff,#00aaff);
+  color:white;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+
+.back-btn:hover{
+  transform:translateY(-2px);
+}
+/* 제품 특징 카드 */
+.feature-card{
+  background:#f8fafc;
+  padding:35px 40px;
+  border-radius:14px;
+  border:1px solid #f8fafc;
+  box-shadow:0 6px 18px rgba(0,0,0,0.04);
+}
+
+/* 제목 */
+.feature-card h2{
+  margin-top:0;
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+/* 리스트 */
+.feature-card ul{
+  list-style:none;
+  padding-left: 18px;
+  margin:0;
+}
+
+.feature-card li{
+  display:flex;
+  gap:14px;
+  margin-bottom:10px;
+  font-size:16px;
+  color:#444;
+  line-height:1.7;
+}
+
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>태양광 모듈</h1>
 
-    <p>
-      태양광 모듈은 태양광 발전 시스템의 핵심 장비로,
-      햇빛을 전기에너지로 변환하는 역할을 합니다.
-    </p>
+<div class="container">
 
-    <h2>제품 특징</h2>
-    <ul>
-      <li>높은 발전 효율과 안정성</li>
-      <li>장기간 사용 가능한 내구성</li>
-      <li>기후 변화에 강한 구조 설계</li>
-      <li>다양한 설치 환경에 대응 가능</li>
-    </ul>
+  <h1>태양광 모듈</h1>
 
+  <p class="desc">
+    태양광 모듈은 태양광 발전 시스템의 핵심 장비로,
+    햇빛을 전기에너지로 변환하여 안정적인 에너지 생산을 가능하게 합니다.
+  </p>
+
+  <!-- 2컬럼 영역 -->
+  <div class="module-grid">
+
+    <!-- 왼쪽 인증서 -->
+    <div class="cert-box">
+      <img src="images/인증5.png" class="cert-img">
+      <p class="cert-title">현대 60kW 인버터 인증서</p>
+    </div>
+
+    <!-- 오른쪽 특징 -->
+    <div class="feature-card">
+      <h2>제품 특징</h2>
+      <ul>
+        <li>• 높은 발전 효율과 안정적인 출력 성능</li>
+        <li>• 장기간 사용을 고려한 고내구성 설계</li>
+        <li>• 고온 및 저온 환경에서도 안정적인 작동</li>
+        <li>• 우수한 내습·내염 성능으로 다양한 환경 대응</li>
+        <li>•  PID 저감 기술 적용으로 장기 효율 유지</li>
+        <li>• 강화유리 적용으로 외부 충격 및 하중 보호</li>
+        <li>• 우수한 저조도 발전 성능 확보</li>
+        <li>• 설치 환경에 맞춘 유연한 시스템 구성 가능</li>
+        <li>• 국내외 인증 기준을 충족한 품질 안정성</li>
+        <li>• 장기 운영을 위한 유지관리 최적화 설계</li>
+     </ul>
+    </div>
+
+  </div>
+
+  <!-- 적용 분야 -->
+  <div class="section">
     <h2>적용 분야</h2>
     <p>
-      주택, 공장, 농가, 상업시설 등 다양한 환경에
-      맞춰 설치가 가능합니다.
+      주택, 공장, 농가, 상업시설 등 다양한 환경에 맞춰
+      최적화된 태양광 설치가 가능합니다.
     </p>
 
-    <a href="index.html" class="back-btn">홈으로 돌아가기</a>
+    <div class="btn-wrap">
+      <a href="index.html" class="back-btn">홈으로 돌아가기</a>
+    </div>
   </div>
+
+</div>
+
 </body>
 </html>

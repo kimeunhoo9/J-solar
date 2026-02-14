@@ -1,139 +1,232 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>인버터 | JSOLAR</title>
-   <link rel="stylesheet" href="style.css"><link rel="icon" type="image/png" href="images/제이솔라로고.png">
-  <meta name="viewport" content="width=1200">
+<meta charset="UTF-8">
+<title>인버터 | JSOLAR</title>
 
-  <style>
-    body {
-      font-family: "Noto Sans KR", sans-serif;
-      background: #f4f6f8;
-      color: #2c2c2c;
-      margin: 0;
-      line-height: 1.8;
-    }
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/제이솔라로고.png">
+<meta name="viewport" content="width=1200">
 
-    .container {
-      max-width: 900px;
-      margin: 80px auto;
-      padding: 55px 50px;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-    }
+<style>
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  background: #f4f6f8;
+  color: #2c2c2c;
+  margin: 0;
+  line-height: 1.8;
+}
 
-    h1 { font-size: 30px; margin-bottom: 30px; }
-    h2 { font-size: 20px; margin-top: 40px; }
-    p { font-size: 15.5px; color: #444; }
+/* 전체 박스 */
+.container {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 60px 55px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+}
 
-    ul { padding-left: 18px; }
-    li { margin-bottom: 10px; }
+h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-    .back-btn {
-      display: inline-block;
-      margin-top: 45px;
-      padding: 14px 26px;
-      background: linear-gradient(90deg,#007bff,#00aaff);
-      color: #fff;
-      border-radius: 10px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-      /* ---- 인증서 이미지 레이아웃 ---- */
-     .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(181px, 1fr));
-      gap: 25px;
-      margin-bottom: 50px;
-    }
+.section-desc {
+  text-align: center;
+  color: #666;
+  margin-bottom: 50px;
+  font-size: 16px;
+}
 
-    .cert-box {
-      background: white;
-      border-radius: 12px;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
-    }
+/* ---------- 인증서 ---------- */
 
-    .cert-box:hover {
-      transform: translateY(-5px);
-    }
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 28px;
+  margin-bottom: 60px;
+}
 
-    .cert-img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-     /* ---- 설명 텍스트 박스 ---- */
-    .text-box {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      line-height: 1.7;
-      font-size: 17px;
-      color: #444;
-    }
-        .back-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 22px;
-      background: #007bff;
-      color: #ffffff;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.25s;
-    }
+.cert-box {
+  background: white;
+  border-radius: 14px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
 
-    .back-btn:hover {
-      background: #0056b3;
-    }
-  </style>
+.cert-box:hover {
+  transform: translateY(-8px);
+}
+
+.cert-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ---------- 설명 카드 ---------- */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: left;
+}
+
+.info-card h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.info-card ul {
+  padding-left: 18px;
+}
+
+.info-card li {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* 강조 카드 */
+.highlight {
+  background: linear-gradient(135deg,#1e73ff,#0b4edb);
+  color: white;
+}
+
+.highlight p {
+  color: white;
+}
+
+/* 버튼 */
+.back-btn {
+  display: inline-block;
+  margin-top: 60px;
+  padding: 14px 28px;
+  background: linear-gradient(90deg,#007bff,#00aaff);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg,#0062cc,#0095dd);
+}
+
+.btn-wrap {
+  text-align: center;
+}
+/* 운영 안정성 카드 (화이트 프리미엄 스타일) */
+.highlight {
+  background: #ffffff;
+  color: #2c2c2c;
+  border: 1px solid #e6eaf0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* 제목 강조 */
+.highlight h2 {
+  color: black;
+}
+.highlight-list li {
+  color: #444;
+}
+
+.highlight-list li::before {
+  content: "✔";
+  background: #1e73ff;
+  color: white;
+}
+
+
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>인버터 인증서</h1>
 
-<div class="cert-grid">
-      <div class="cert-box">
-        <img src="images/인증5.png" alt="인증서 1" class="cert-img">
-      </div>
-      <div class="cert-box">
-        <img src="images/인증6.png" alt="인증서 2" class="cert-img">
-      </div>
-      <div class="cert-box">
-        <img src="images/인증7.png" alt="인증서 3" class="cert-img">
-      </div>
-      <div class="cert-box">
-        <img src="images/인증 8.png" alt="인증서 4" class="cert-img">
-      </div>
+<div class="container">
+
+  <h1>인버터 인증 및 기술 신뢰성</h1>
+  <p class="section-desc">
+    J-SOLAR는 국내 인증 기준을 충족한 인버터 시스템을 적용하여
+    안정적이고 효율적인 태양광 발전 환경을 제공합니다.
+  </p>
+
+  <!-- 인증서 이미지 (그대로 유지) -->
+  <div class="cert-grid">
+
+    <div class="cert-box">
+      <img src="images/인증5.png" class="cert-img">
+      <p class="cert-title">현대60kW 인버터 인증서</p>
     </div>
 
-    <p>
-      인버터는 태양광 모듈에서 생산된 직류 전기를
-      교류 전기로 변환하는 핵심 장비입니다.
-    </p>
+    <div class="cert-box">
+      <img src="images/인증6.png" class="cert-img">
+      <p class="cert-title">현대125kW 인버터 인증서</p>
+    </div>
 
-    <h2>제품 특징</h2>
-    <ul>
-      <li>안정적인 전력 변환 성능</li>
-      <li>발전량 모니터링 기능</li>
-      <li>고장 감지 및 보호 기능</li>
-      <li>시스템 효율을 고려한 설계</li>
-    </ul>
+    <div class="cert-box">
+      <img src="images/인증7.png" class="cert-img">
+      <p class="cert-title">다쓰테크 20kW 인버터</p>
+    </div>
 
-    <h2>운영 안정성</h2>
-    <p>
-      장시간 사용을 고려한 내구성과
-      안정적인 운영을 목표로 구성합니다.
-    </p>
+  </div>
 
+  <!-- 설명 카드 영역 -->
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h2>핵심 성능</h2>
+      <ul>
+        <li>고효율 전력 변환 기술 적용</li>
+        <li>실시간 발전량 모니터링 지원</li>
+        <li>안정적인 계통 연계 시스템</li>
+        <li>에너지 손실 최소화 설계</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h2>안전 설계</h2>
+      <ul>
+        <li>과전압 및 이상 감지 보호</li>
+        <li>자동 시스템 보호 기능</li>
+        <li>장시간 운전 내구성 확보</li>
+        <li>국내 인증 기준 충족 장비</li>
+      </ul>
+    </div>
+
+ <div class="info-card highlight">
+  <h2>운영 안정성</h2>
+
+  <ul class="">
+    <li>장기 발전 효율을 고려한 시스템 설계</li>
+    <li>유지보수 부담 최소화 구조</li>
+    <li>안정적인 태양광 운영 환경 제공</li>
+    <li>지속적인 에너지 생산 안정성 확보</li>
+  </ul>
+
+</div>
+
+  </div>
+
+  <div class="btn-wrap">
     <a href="index.html" class="back-btn">홈으로 돌아가기</a>
   </div>
+
+</div>
+
 </body>
 </html>
